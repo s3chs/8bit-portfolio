@@ -3,21 +3,25 @@ const bigTitle = document.querySelector(".big-title");
 const header = document.querySelector("header");
 const shadow = document.querySelector(".shadow");
 const content = document.querySelector(".content");
-const section = document.querySelector("section");
+const aboutSection = document.querySelector(".about");
+const skillsSection = document.querySelector(".skills");
 const imgContainer = document.querySelector(".img-container");
 const opacity = document.querySelectorAll(".opacity");
 const border = document.querySelector(".border");
 
 let headerHeight = header.offsetHeight;
-let sectionHeight = section.offsetHeight;
+let aboutSectionHeight = aboutSection.offsetHeight;
+let skillsSectionHeight = skillsSection.offsetHeight;
 
-console.log(headerHeight);
-console.log(sectionHeight);
+console.log("this is headerHeight", headerHeight);
+console.log("this is sectionHeight", aboutSectionHeight);
 
 window.addEventListener("scroll", () => {
   let scroll = window.pageYOffset;
-  let sectionY = section.getBoundingClientRect();
-  console.log(sectionY.top);
+  let aboutSectionY = aboutSection.getBoundingClientRect();
+  console.log("this is the scroll", scroll);
+  console.log("this is sectionYtop", aboutSectionY.top);
+  // console.log("this is sectionYbottom", sectionY.bottom);
 
   translate.forEach((element) => {
     let speed = element.dataset.speed;
@@ -25,19 +29,21 @@ window.addEventListener("scroll", () => {
   });
 
   opacity.forEach((element) => {
-    element.style.opacity = scroll / (sectionY.top + sectionHeight);
+    element.style.opacity = scroll / (aboutSectionY.top + aboutSectionHeight);
   });
 
-  bigTitle.style.opacity = -scroll / (headerHeight / 2) + 1;
-  shadow.style.height = `${scroll * 0.5 + 50}px`;
+  bigTitle.style.opacity = -scroll / (headerHeight / 3.5) + 1;
+  shadow.style.height = `${scroll * 0.5 + 10}px`;
 
   content.style.transform = `translateY(${
-    (scroll / (sectionHeight + sectionY.top)) * 60 - 60
+    (scroll / (aboutSectionHeight + aboutSectionY.top)) * 60 - 60
   }px)`;
 
   imgContainer.style.transform = `translateY(${
-    (scroll / (sectionHeight + sectionY.top)) * - 50 + 50
+    (scroll / (aboutSectionHeight + aboutSectionY.top)) * -50 + 50
   }px)`;
 
-  border.style.width = `${(scroll / (sectionY.top + sectionHeight)) * 30}%`;
+  border.style.width = `${
+    (scroll / (aboutSectionY.top + aboutSectionHeight)) * 30
+  }%`;
 });

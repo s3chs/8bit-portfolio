@@ -52,6 +52,7 @@ header img {
 .second-trees {
   position: absolute;
   width: 100vw;
+  min-height: 100px;
   bottom: 0px;
   z-index: 19;
 }
@@ -105,25 +106,26 @@ nav .container {
   position: absolute;
   z-index: 30;
   line-height: 4rem;
-  top: calc(65% - 2rem);
+  top: calc(50% - 2rem);
+
   width: 100%;
   text-align: center;
   font-size: 2rem;
   font-weight: 600;
 }
 
-section {
+.about {
   width: 100%;
   background-color: #151515;
   position: relative;
 }
 
-section .container {
+.about .container {
   padding: 3rem;
   min-height: 100vh;
 }
 
-section .container > * {
+.about .container > * {
   margin: 2rem;
 }
 
@@ -174,8 +176,76 @@ section .container > * {
   opacity: 0;
 }
 
+
+/* SKILLS SECTION  */
+
+.skills {
+  width: 100%;
+  background-color: #151515;
+  position: relative;
+}
+
+.skills .container {
+  padding: 3rem;
+  min-height: 80vh;
+}
+
+.skills .container > * {
+  margin: 2rem;
+}
+
+/* .content {
+  transform: translateY(-60px);
+} */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+}
+
+.text {
+  padding-top: 20px;
+  line-height: 2rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 850px) {
-  section .container {
+  .about .container {
     display: flex;
     flex-direction: column;
   }
@@ -185,12 +255,17 @@ section .container > * {
   .text {
     font-size: 0.8rem;
   }
-
   .title {
     font-size: 1.2rem;
   }
-}
 
+  .big-title {
+    font-size: 15px;
+  }
+  .header {
+    height: 10px;
+  }
+}
 
 /* ANIMATIONS */
 
