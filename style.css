@@ -169,7 +169,7 @@ nav .container {
 }
 
 .img-container {
-  transform: translateY(-50px);
+  transform: translateY(-60px);
 }
 
 .opacity {
@@ -185,10 +185,15 @@ nav .container {
 }
 
 .skills .container {
-  transform: translateY(-50px);
+  /* transform: translateY(-200px); */
   padding: 3rem;
   height: 80vh;
   flex-direction: column;
+}
+
+.skills-container .title {
+  text-align: center;
+  padding-bottom: 50px;
 }
 
 .skills .container > * {
@@ -245,6 +250,16 @@ nav .container {
   align-items: center;
 }
 
+.skills-shadow {
+  position: absolute;
+  /* bottom: 180%; */
+  height:30px;
+  width: 100%;
+  left: 0;
+  z-index: 20;
+  background: linear-gradient(to bottom, #151515, transparent);
+}
+
 @media (max-width: 850px) {
   .about .container {
     display: flex;
@@ -268,7 +283,95 @@ nav .container {
   }
 }
 
+/* PROJECTS SECTION */
+
+.projects {
+  position: relative;
+  height: 100vh;
+  z-index: 1;
+}
+
+.layer-one {
+  position: relative;
+  height: 100vh;
+  bottom: 0px;
+  background-image: url("https://res.cloudinary.com/dncemocxu/image/upload/v1626717066/Parallax/demon%20woods%20layers/parallax-demon-woods-bg_cck9kd.png");
+  z-index: 17;
+  background-repeat: repeat;
+  overflow-x: hidden;
+  image-rendering: pixelated;
+
+  animation-name: scroll;
+  animation-duration: 80s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  background-position: 0 0;
+}
+.layer-two {
+  position: relative;
+  height: 100vh;
+  bottom: 100%;
+  background-image: url("https://res.cloudinary.com/dncemocxu/image/upload/v1626717066/Parallax/demon%20woods%20layers/parallax-demon-woods-far-trees_k6dcnc.png");
+  z-index: 18;
+  background-repeat: repeat;
+  overflow-x: hidden;
+  background-size: cover;
+  image-rendering: pixelated;
+
+  animation-name: scroll;
+  animation-duration: 70s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  background-position: 0 0;
+}
+.layer-three {
+  position: relative;
+  height: 100vh;
+  bottom: 200%;
+  background-image: url("https://res.cloudinary.com/dncemocxu/image/upload/v1626717066/Parallax/demon%20woods%20layers/parallax-demon-woods-mid-trees_o2kvg4.png");
+  z-index: 19;
+  background-repeat: repeat;
+  overflow-x: hidden;
+  background-size: cover;
+  image-rendering: pixelated;
+
+  animation-name: scroll;
+  animation-duration: 80s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  background-position: 0 0;
+}
+.layer-four {
+  position: relative;
+  height: 100vh;
+  bottom: 300%;
+  background-image: url("https://res.cloudinary.com/dncemocxu/image/upload/v1626717066/Parallax/demon%20woods%20layers/parallax-demon-woods-close-trees_gs9w9h.png");
+  z-index: 20;
+  background-repeat: repeat;
+  overflow-x: hidden;
+  background-size: cover;
+  image-rendering: pixelated;
+
+  animation-name: scroll;
+  animation-duration: 90s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  background-position: 0 0;
+}
+
 /* ANIMATIONS */
+
+/* SCROLL */
+
+@keyframes scroll {
+  from {
+    background-position: 0 0;
+  }
+  /*use negative width if you want it to flow right to left else and positive for left to right*/
+  to {
+    background-position: -1000vh 0;
+  }
+}
 
 /* ANIMATED CHARACTER */
 

@@ -4,7 +4,7 @@ const header = document.querySelector("header");
 const shadow = document.querySelector(".shadow");
 const content = document.querySelector(".content");
 const aboutSection = document.querySelector(".about");
-const skillsSection = document.querySelector(".skills .container");
+const skillsSection = document.querySelector(".skills-container");
 const imgContainer = document.querySelector(".img-container");
 const opacity = document.querySelectorAll(".opacity");
 const border = document.querySelector(".border");
@@ -21,10 +21,10 @@ window.addEventListener("scroll", () => {
   let scroll = window.pageYOffset;
   let aboutSectionY = aboutSection.getBoundingClientRect();
   let skillsSectionY = skillsSection.getBoundingClientRect();
-  console.log("this is the scroll", scroll);
+  // console.log("scroll, ce que tu as scroll jusque la", scroll);
   console.log("this is sectionYtop", aboutSectionY.top);
-  console.log(border.style.width);
-  // console.log("this is sectionYbottom", sectionY.bottom);
+  // console.log(border.style.width);
+  console.log("this is sectionYbottom", aboutSectionY.bottom);
 
   translate.forEach((element) => {
     let speed = element.dataset.speed;
@@ -50,8 +50,8 @@ window.addEventListener("scroll", () => {
     (scroll / (aboutSectionY.top + aboutSectionHeight)) * 25
   }%`;
 
-  skillsSection.style.transform = `translateY(${
-    (scroll / (skillsSectionHeight + skillsSectionY.top)) * -60 + 60
-  }px)`;
+  // skillsSection.style.transform = `translateY(${
+  //   (scroll / (skillsSectionHeight + skillsSectionY.top)) * - 50 + 50
+  // }px)`;
   
 });
