@@ -6,52 +6,44 @@ const content = document.querySelector(".content");
 const aboutSection = document.querySelector(".about");
 const skillsSection = document.querySelector(".skills-container");
 const imgContainer = document.querySelector(".img-container");
-const opacity = document.querySelectorAll(".opacity");
-const border = document.querySelector(".border");
-const langIcon = document.querySelector(".lang-icon");
+// const langIcon = document.querySelector(".lang-icon");
 
 let headerHeight = header.offsetHeight;
 let aboutSectionHeight = aboutSection.offsetHeight;
 let skillsSectionHeight = skillsSection.offsetHeight;
 
-console.log("this is headerHeight", headerHeight);
-console.log("this is sectionHeight", aboutSectionHeight);
+// console.log("this is headerHeight", headerHeight);
+// console.log("this is sectionHeight", aboutSectionHeight);
+
+function characterMoveAbout() {
+  var characterContainer = document.querySelector(".Character");
+  var character = document.querySelector(".Character_spritesheet");
+  var characterPositionFromTop = character.getBoundingClientRect().top;
+  var screenPosition = window.innerHeight / 2;
+
+  if (characterPositionFromTop < screenPosition) {
+    character.classList.add("face-right");
+    characterContainer.classList.add("going-right");
+
+    setTimeout(() => {
+      characterContainer.style.transform = "translate(120%, -50%)";
+      content.style.display = "block";
+      character.classList.remove("face-right");
+      window.removeEventListener("scroll", characterMoveAbout);
+    }, 3000);
+  }
+}
 
 window.addEventListener("scroll", () => {
   let scroll = window.pageYOffset;
-  let aboutSectionY = aboutSection.getBoundingClientRect();
-  let skillsSectionY = skillsSection.getBoundingClientRect();
-  // console.log("scroll, ce que tu as scroll jusque la", scroll);
-  console.log("this is sectionYtop", aboutSectionY.top);
-  // console.log(border.style.width);
-  console.log("this is sectionYbottom", aboutSectionY.bottom);
 
   translate.forEach((element) => {
     let speed = element.dataset.speed;
     element.style.transform = `translateY(${scroll * speed}px)`;
   });
 
-  opacity.forEach((element) => {
-    element.style.opacity = scroll / (aboutSectionY.top + aboutSectionHeight);
-  });
-
   bigTitle.style.opacity = -scroll / (headerHeight / 3.5) + 1;
   shadow.style.height = `${scroll * 0.5 + 10}px`;
 
-  content.style.transform = `translateY(${
-    (scroll / (aboutSectionHeight + aboutSectionY.top)) * -60 + 60
-  }px)`;
-
-  imgContainer.style.transform = `translateY(${
-    (scroll / (aboutSectionHeight + aboutSectionY.top)) * -60 + 60
-  }px)`;
-
-  border.style.width = `${
-    (scroll / (aboutSectionY.top + aboutSectionHeight)) * 25
-  }%`;
-
-  // skillsSection.style.transform = `translateY(${
-  //   (scroll / (skillsSectionHeight + skillsSectionY.top)) * - 50 + 50
-  // }px)`;
-  
+  characterMoveAbout();
 });

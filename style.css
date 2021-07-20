@@ -117,20 +117,30 @@ nav .container {
 .about {
   width: 100%;
   background-color: #151515;
+  min-height: 100vh;
   position: relative;
 }
 
 .about .container {
-  padding: 3rem;
-  min-height: 100vh;
+  /* padding: 3rem; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .about .container > * {
-  margin: 2rem;
+  /* margin: 2rem; */
 }
 
 .content {
-  transform: translateY(-50px);
+  position: absolute;
+  top: 50%;
+  left: -50%;
+  transform: translate(-50%, -50%);
+  display: none;
+
+  opacity: 1;
 }
 
 .container {
@@ -147,13 +157,14 @@ nav .container {
 }
 
 .text {
-  padding-top: 20px;
-  line-height: 2rem;
+  width: 40vw;
+  padding-top: 40px;
+  line-height: 3rem;
 }
 
 .border {
   position: absolute;
-  width: 20%;
+  width: 30%;
   height: 3px;
   background-color: white;
 }
@@ -169,7 +180,8 @@ nav .container {
 }
 
 .img-container {
-  transform: translateY(-60px);
+  /* position: absolute; */
+  transform: translateY(-90px);
 }
 
 .opacity {
@@ -184,7 +196,7 @@ nav .container {
   position: relative;
 }
 
-.skills .container {
+.skills-container {
   /* transform: translateY(-200px); */
   padding: 3rem;
   height: 80vh;
@@ -194,10 +206,6 @@ nav .container {
 .skills-container .title {
   text-align: center;
   padding-bottom: 50px;
-}
-
-.skills .container > * {
-  margin: 2rem;
 }
 
 .container {
@@ -252,12 +260,12 @@ nav .container {
 
 .skills-shadow {
   position: absolute;
-  /* bottom: 180%; */
-  height:30px;
+  bottom: 0px;
+  height: 40px;
   width: 100%;
   left: 0;
   z-index: 20;
-  background: linear-gradient(to bottom, #151515, transparent);
+  background: linear-gradient(to top, #16303c, transparent);
 }
 
 @media (max-width: 850px) {
@@ -376,10 +384,14 @@ nav .container {
 /* ANIMATED CHARACTER */
 
 .Character {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   width: calc(32px * var(--pixel-size));
   height: calc(32px * var(--pixel-size));
   overflow: hidden;
-  position: relative;
   margin: 4em auto;
 }
 
@@ -406,6 +418,24 @@ nav .container {
 }
 .face-left {
   top: calc(-96px * var(--pixel-size));
+}
+
+.Character.going-right {
+  animation: character-right 3s linear;
+}
+
+@keyframes character-right {
+  0% {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  100% {
+    top: 50%;
+    left: 50%;
+    transform: translate(120%, -50%);
+  }
 }
 
 @keyframes moveSpritesheet {
