@@ -117,7 +117,7 @@ nav .container {
   position: relative;
   background-color: #151515;
   max-width: 100vw;
-  min-height: 115vh;
+  min-height: 120vh;
 }
 
 .container {
@@ -162,7 +162,6 @@ nav .container {
   height: 3px;
   background-color: white;
   opacity: 0;
-  /* transform: translateX(-40px); */
   animation: 0.5s appear 0.5s ease-in forwards;
 }
 
@@ -340,6 +339,7 @@ nav .container {
   position: relative;
   height: 100vh;
   bottom: 400%;
+  display: flex;
 }
 
 .gallery {
@@ -347,6 +347,11 @@ nav .container {
   position: absolute;
   height: 100vh;
   padding: 4vw;
+}
+
+.gallery .title {
+  position: absolute;
+  z-index: 30;
 }
 
 /* ANIMATIONS */
