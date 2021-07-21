@@ -68,13 +68,12 @@ function characterMoveSkills() {
   var characterPositionFromTop = character.getBoundingClientRect().top;
   if (characterPositionFromTop < screenPositionLater && playSecondAnim) {
     characterContainer.classList.add("going-down");
-
     setTimeout(() => {
       character.classList.add("face-left");
       characterContainer.classList.add("going-left");
       setTimeout(() => {
-        title.classList.toggle("active");
         character.classList.remove("face-left");
+        title.classList.toggle("active");
         skillTitle.classList.toggle("active");
         skillTitle.style.display = "block";
         langTexts.forEach((elem) => {
@@ -86,6 +85,7 @@ function characterMoveSkills() {
           elem.style.display = "block";
         });
         playSecondAnim = false;
+        clearTimeout();
       }, 1500);
     }, 1500);
   }
