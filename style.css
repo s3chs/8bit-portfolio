@@ -600,8 +600,12 @@ nav .container {
 /* MEDIA QUERIES */
 
 @media (max-width: 1000px) {
+  .big-title {
+    font-size: 1.2em;
+  }
+
   .about {
-    max-height: 80vh;
+    min-height: 90vh;
   }
 
   .title {
@@ -641,7 +645,7 @@ nav .container {
   }
 
   .skill-container {
-padding: 15px;
+    padding: 15px;
   }
 
   .skill-title {
@@ -664,5 +668,128 @@ padding: 15px;
     transform: translateX(20px);
     animation: 0.5s appear 0.18s ease-in forwards;
     margin: 1px 0;
+  }
+
+  .title-section {
+    margin-bottom: 50px;
+    text-align: center;
+    text-justify: center;
+  }
+
+  .project-container {
+    position: relative;
+    height: 15vh;
+    width: 30vw;
+    z-index: 100;
+  }
+
+  .project-container img {
+    border: 1px solid white;
+    height: 15vh;
+    width: 30vw;
+    object-fit: cover;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+  .project-info-container {
+    opacity: 0;
+    border: 1px solid white;
+    position: absolute;
+    top: 0px;
+    height: 15vh;
+    width: 30vw;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .contact-container {
+    margin: 50px 150px;
+  }
+
+  .contact-container img {
+    width: 6vw;
+    max-width: 10vw;
+  }
+
+  .thanks {
+    font-size: 12px;
+    line-height: 1.7em;
+  }
+}
+
+@media (max-width: 500px) {
+  header {
+    height: 800px;
+  }
+  .title {
+    font-size: 20px;
+  }
+
+  h3,
+  h2 {
+    font-size: 20px;
+  }
+
+  .text {
+    font-size: 13px;
+  }
+
+  .skill-container {
+    padding: 5px;
+  }
+
+  .lang-icon {
+    display: block;
+    opacity: 1;
+    height: 5vh;
+    transform: translateX(-20px);
+    animation: 0.5s appear 0.2s ease-in forwards;
+  }
+
+  .lang-text {
+    display: block;
+    opacity: 1;
+    font-size: 9px;
+    letter-spacing: 1.2px;
+    transform: translateX(20px);
+    animation: 0.5s appear 0.18s ease-in forwards;
+    margin: 1px 0;
+  }
+
+  .project-container {
+    position: relative;
+    height: 12vh;
+    width: 15vw;
+    z-index: 100;
+  }
+
+  .project-container img {
+    border: 1px solid white;
+    height: 12vh;
+    width: 30vw;
+    object-fit: cover;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+  .project-info-container {
+    opacity: 0;
+    border: 1px solid white;
+    position: absolute;
+    top: 0px;
+    height: 12vh;
+    width: 15vw;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .project-info  {
+    display: none;
+  }
+
+  .gallery {
+    width: 100vw;
+    position: absolute;
+    height: 100vh;
+    padding-top: 15vw;
   }
 }
