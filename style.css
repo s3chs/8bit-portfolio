@@ -117,7 +117,7 @@ nav .container {
   position: relative;
   background-color: #151515;
   max-width: 100vw;
-  min-height: 120vh;
+  min-height: 110vh;
 }
 
 .container {
@@ -130,7 +130,7 @@ nav .container {
 .content {
   position: absolute;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -70%);
   display: none;
   opacity: 1;
 }
@@ -346,12 +346,81 @@ nav .container {
   width: 100%;
   position: absolute;
   height: 100vh;
-  padding: 4vw;
+  padding-top: 10vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.gallery .title {
+.title-section {
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
   position: absolute;
+  bottom: 85%;
+  left: 50%;
+  transform: translate(-50%, -90%);
   z-index: 30;
+}
+
+.project-container {
+  position: relative;
+  height: 20vh;
+  width: 17vw;
+  z-index: 100;
+  margin: 1em 3em;
+}
+
+.project-container img {
+  border: 1px solid white;
+  width: 17vw;
+  height: 20vh;
+  object-fit: cover;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.project-container:hover img {
+  transform: scale(1.1);
+}
+
+.project-info-container {
+  opacity: 0;
+  border: 1px solid white;
+  position: absolute;
+  top: 0px;
+  width: 17vw;
+  height: 20vh;
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+}
+
+.project-info-container:hover {
+  cursor: pointer;
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: black;
+  opacity: 0.9;
+}
+
+.project-info > * {
+  padding-top: 0.8em;
+}
+
+.project-info p {
+  font-size: 0.8em;
+  text-align: center;
+  line-height: 1.4em;
 }
 
 /* ANIMATIONS */
@@ -390,9 +459,9 @@ nav .container {
 
 .Character {
   position: absolute;
-  top: 50%;
+  top: 70%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -70%);
   width: calc(32px * var(--pixel-size));
   height: calc(32px * var(--pixel-size));
   overflow: hidden;
@@ -439,13 +508,13 @@ nav .container {
   0% {
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -70%);
   }
 
   100% {
     top: 50%;
     left: 50%;
-    transform: translate(140%, -50%);
+    transform: translate(140%, -70%);
   }
 }
 
@@ -453,13 +522,13 @@ nav .container {
   0% {
     top: 50%;
     left: 50%;
-    transform: translate(140%, -50%);
+    transform: translate(140%, -70%);
   }
 
   100% {
     top: 50%;
     left: 50%;
-    transform: translate(140%, 80%);
+    transform: translate(140%, 60%);
   }
 }
 
@@ -467,13 +536,13 @@ nav .container {
   0% {
     top: 50%;
     left: 50%;
-    transform: translate(140%, 80%);
+    transform: translate(140%, 60%);
   }
 
   100% {
     top: 50%;
     left: 50%;
-    transform: translate(-50%, 80%);
+    transform: translate(-50%, 60%);
   }
 }
 
