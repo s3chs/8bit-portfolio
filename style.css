@@ -354,14 +354,13 @@ nav .container {
 }
 
 .title-section {
-  margin-bottom: 1rem;
   padding-bottom: 0.5rem;
   letter-spacing: 0.5em;
   text-transform: uppercase;
   position: absolute;
   bottom: 85%;
   left: 50%;
-  transform: translate(-50%, -90%);
+  transform: translate(-50%, -85%);
   z-index: 30;
 }
 
@@ -421,6 +420,49 @@ nav .container {
   font-size: 0.8em;
   text-align: center;
   line-height: 1.4em;
+}
+
+/* CONTACT SECTION  */
+
+.contact {
+  height: 50vh;
+  background-color: black;
+}
+
+.contact-title {
+  padding-top: 100px;
+  text-align: center;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+}
+
+.contact-container {
+  margin: 6vh 35%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.contact-container img {
+  image-rendering: pixelated;
+  width: 4vw;
+  max-width: 6vw;
+  transition: transform 0.3s ease-in-out;
+}
+
+.contact-container img:hover {
+  transform: scale(1.2);
+}
+
+.contact-shadow {
+  height: 40px;
+  z-index: 20;
+  background: linear-gradient(to bottom, #16303c, transparent);
+}
+
+.thanks {
+  text-align: center;
+  font-size: 1em;
 }
 
 /* ANIMATIONS */
@@ -557,13 +599,70 @@ nav .container {
 
 /* MEDIA QUERIES */
 
-@media (max-width: 850px) {
-  header {
-    height: 70vh;
+@media (max-width: 1000px) {
+  .about {
+    max-height: 80vh;
+  }
+
+  .title {
+    font-size: 1.5em;
+    text-align: center;
+    text-justify: center;
+  }
+  .border {
+    display: none;
+  }
+
+  .text {
+    width: 80vw;
+    text-align: center;
+    text-justify: center;
+  }
+  .img-container {
+    display: none;
   }
 
   .about .container {
     display: flex;
     flex-direction: column;
+  }
+
+  .content {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    opacity: 1;
+  }
+
+  .skills-container {
+    height: 40vh;
+    flex-direction: column;
+  }
+
+  .skill-container {
+padding: 15px;
+  }
+
+  .skill-title {
+    opacity: 1;
+    display: block;
+  }
+  .lang-icon {
+    display: block;
+    opacity: 1;
+    height: 7vh;
+    transform: translateX(-20px);
+    animation: 0.5s appear 0.2s ease-in forwards;
+  }
+
+  .lang-text {
+    display: block;
+    opacity: 1;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    transform: translateX(20px);
+    animation: 0.5s appear 0.18s ease-in forwards;
+    margin: 1px 0;
   }
 }
