@@ -83,6 +83,7 @@ html {
   display: block;
   animation: appear 0.7s ease-in-out;
   background: #ab6b8d;
+  overflow: hidden;
 }
 
 /* CHARACTER FROM THE LOADER */
