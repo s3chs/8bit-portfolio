@@ -1,6 +1,16 @@
 var screenPosition = window.innerHeight / 2;
 var screenPositionLater = window.innerHeight / 9;
 
+// LOADER VARIABLES //
+
+const button = document.querySelector(".btn");
+const welcomePage = document.querySelector(".welcome-page");
+const loadingPage = document.querySelector(".loader");
+const lambdaLogo = document.querySelector(".lambda-logo");
+const characterLoader = document.querySelector(".Character-loader");
+const loadingtypo = document.querySelector(".horizontal-letters");
+const mainSite = document.querySelector(".main-site");
+
 // HEADER VARIABLES //
 const translate = document.querySelectorAll(".translate");
 const bigTitle = document.querySelector(".big-title");
@@ -25,6 +35,34 @@ const skillTitle = document.querySelector(".skill-title");
 const langIcons = document.querySelectorAll(".lang-icon");
 const langTexts = document.querySelectorAll(".lang-text");
 let skillsSectionHeight = skillsSection.offsetHeight;
+
+button.addEventListener("click", () => {
+  lambdaLogo.classList.toggle("active");
+  button.classList.toggle("active");
+
+  //  WELCOME PAGE GETS OUT
+  setTimeout(() => {
+    welcomePage.classList.toggle("inactive");
+  }, 600);
+
+  // LOADER GETS IN
+  setTimeout(() => {
+    setTimeout(() => {
+      setTimeout(() => {
+        setTimeout(() => {
+          setTimeout(() => {
+            mainSite.classList.toggle("active");
+          }, 600);
+          loadingPage.classList.toggle("active");
+        }, 600);
+        loadingtypo.classList.add("out");
+      }, 4000);
+      characterLoader.classList.toggle("activecharacter");
+      loadingPage.classList.toggle("activeout");
+    }, 2000);
+    loadingPage.classList.toggle("active");
+  }, 1000);
+});
 
 window.addEventListener("scroll", () => {
   let scroll = window.pageYOffset;
