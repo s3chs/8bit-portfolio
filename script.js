@@ -1,6 +1,5 @@
 var screenPosition = window.innerHeight / 2;
 var screenPositionLater = window.innerHeight / 9;
-
 // LOADER VARIABLES //
 
 const button = document.querySelector(".btn");
